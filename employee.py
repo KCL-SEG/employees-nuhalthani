@@ -109,10 +109,10 @@ billie = Employee('Billie', 4000, "monthly", False, "", 0, 0, 0)
 charlie = Employee('Charlie', 100, "hourly", False, "", 0, 0, 25)
 
 # Renee works on a monthly salary of 3000 and receives a commission for 4 contract(s) at 200/contract.  Their total pay is 3800.
-renee = Employee('Renee', 300, "monthly", True, "contract", 200, 4, 0)
+renee = Employee('Renee', 3000, "monthly", True, "contract", 200, 4, 0)
 
 # Jan works on a contract of 150 hours at 25/hour and receives a commission for 3 contract(s) at 220/contract.  Their total pay is 4410.
-jan = Employee('Jan', 150, "hourly", True, "contract", 200, 3, 25)
+jan = Employee('Jan', 150, "hourly", True, "contract", 220, 3, 25)
 
 # Robbie works on a monthly salary of 2000 and receives a bonus commission of 1500.  Their total pay is 3500.
 robbie = Employee('Robbie', 2000, "monthly", True, "bonus", 1500, 0, 0)
