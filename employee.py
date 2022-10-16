@@ -47,9 +47,9 @@ class Employee:
         final_string = ""
 
         if self.contract == "monthly":
-            final_string = monthly_string(self)
+            final_string += monthly_string(self)
         else:
-            final_string = hourly_string(self)
+            final_string += hourly_string(self)
 
         return final_string
 
