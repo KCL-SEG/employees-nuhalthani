@@ -60,33 +60,46 @@ class Employee:
         final_string = ""
 
         if self.contract == "monthly":
-            final_string += monthly_string(self)
+            #final_string += monthly_string(self)
+            if self.commission == False:
+                final_string += f'{self.name} works on a monthly salary of {self.salary}. Their total pay is {self.get_pay()}.'
+            elif self.commission and self.commission_type == "bonus":
+                final_string += f'{self.name} works on a monthly salary of {self.salary} and receives a bonus commission of {self.commission_total}. Their total pay is {self.get_pay()}.'
+            else:
+                final_string += f'{self.name} works on a monthly salary of {self.salary} and receives a commission for {self.contract_total} contract(s) at {self.commission_total}/contract. Their total pay is {self.get_pay()}.'
+
         else:
-            final_string += hourly_string(self)
+            #final_string += hourly_string(self)
+            if self.commission == False:
+                final_string += f'{self.name} works on a contract of {self.salary} hours at {self.hours_worked}/hour. Their total pay is {self.get_pay()}.'
+            elif self.commission and self.commission_type == "bonus":
+                final_string += f'{self.name} works on a contract of {self.salary} hours at {self.hours_worked}/hour and receives a bonus commission of {self.commission_total}. Their total pay is {self.get_pay()}.'
+            else:
+                final_string += f'{self.name} works on a contract of {self.salary} hours at {self.hours_worked}/hour and receives a commission for {self.contract_total} contract(s) at {self.commission_total}/contract. Their total pay is {self.get_pay()}.'
 
         return final_string
 
-    def monthly_string(self):
-        final_string = ""
-        if self.commission == False:
-            final_string += f'{self.name} works on a monthly salary of {self.salary}. Their total pay is {self.get_pay()}.'
-        elif self.commission and self.commission_type == "bonus":
-            final_string += f'{self.name} works on a monthly salary of {self.salary} and receives a bonus commission of {self.commission_total}. Their total pay is {self.get_pay()}.'
-        else:
-            final_string += f'{self.name} works on a monthly salary of {self.salary} and receives a commission for {self.contract_total} contract(s) at {self.commission_total}/contract. Their total pay is {self.get_pay()}.'
+    #def monthly_string(self):
+    #    final_string = ""
+    #    if self.commission == False:
+    #        final_string += f'{self.name} works on a monthly salary of {self.salary}. Their total pay is {self.get_pay()}.'
+    #    elif self.commission and self.commission_type == "bonus":
+    #        final_string += f'{self.name} works on a monthly salary of {self.salary} and receives a bonus commission of {self.commission_total}. Their total pay is {self.get_pay()}.'
+    #    else:
+    #        final_string += f'{self.name} works on a monthly salary of {self.salary} and receives a commission for {self.contract_total} contract(s) at {self.commission_total}/contract. Their total pay is {self.get_pay()}.'
 
-        return final_string
+    #    return final_string
 
-    def hourly_string(self):
-        final_string = ""
-        if self.commission == False:
-            final_string += f'{self.name} works on a contract of {self.salary} hours at {self.hours_worked}/hour. Their total pay is {self.get_pay()}.'
-        elif self.commission and self.commission_type == "bonus":
-            final_string += f'{self.name} works on a contract of {self.salary} hours at {self.hours_worked}/hour and receives a bonus commission of {self.commission_total}. Their total pay is {self.get_pay()}.'
-        else:
-            final_string += f'{self.name} works on a contract of {self.salary} hours at {self.hours_worked}/hour and receives a commission for {self.contract_total} contract(s) at {self.commission_total}/contract. Their total pay is {self.get_pay()}.'
+    #def hourly_string(self):
+    #    final_string = ""
+    #    if self.commission == False:
+    #        final_string += f'{self.name} works on a contract of {self.salary} hours at {self.hours_worked}/hour. Their total pay is {self.get_pay()}.'
+    #    elif self.commission and self.commission_type == "bonus":
+    #        final_string += f'{self.name} works on a contract of {self.salary} hours at {self.hours_worked}/hour and receives a bonus commission of {self.commission_total}. Their total pay is {self.get_pay()}.'
+    #    else:
+    #        final_string += f'{self.name} works on a contract of {self.salary} hours at {self.hours_worked}/hour and receives a commission for {self.contract_total} contract(s) at {self.commission_total}/contract. Their total pay is {self.get_pay()}.'
 
-        return final_string
+    #    return final_string
 
 
 # Billie works on a monthly salary of 4000.  Their total pay is 4000.
