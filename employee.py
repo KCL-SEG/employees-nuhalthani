@@ -77,7 +77,7 @@ class Employee:
 
 
 # Billie works on a monthly salary of 4000.  Their total pay is 4000.
-billie = Employee('Billie', 4000, "monthly", Flase, "", 0, 0, 0)
+billie = Employee('Billie', 4000, "monthly", False, "", 0, 0, 0)
 
 # Charlie works on a contract of 100 hours at 25/hour.  Their total pay is 2500.
 charlie = Employee('Charlie', 100, "hourly", False, "", 0, 0, 25)
