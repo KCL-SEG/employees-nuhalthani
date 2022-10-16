@@ -15,33 +15,46 @@ class Employee:
     def get_pay(self):
         payment = 0
         if self.contract == "monthly":
-            payment = get_monthly()
+            #payment = get_monthly(self)
+            if self.commission == False:
+                payment = self.salary
+            elif self.commission and self.commission_type == "bonus":
+                payment = self.salary + self.commission_total
+            else:
+                payment = self.salary + (self.contract_total * self.commission_total)
+
         else:
-            payment = get_hourly(self)
+            #payment = get_hourly(self)
+            if self.commission == False:
+                payment = self.salary * self.hours_worked
+            elif self.commission and self.commission_type == "bonus":
+                payment = (self.salary * self.hours_worked) + self.commission_total
+            else:
+                payment = (self.salary * self.hours_worked) + (self.contract_total * self.commission_total)
 
         return payment
 
-    def get_monthly():
-        payment = 0
-        if self.commission == False:
-            payment = self.salary
-        elif self.commission and self.commission_type == "bonus":
-            payment = self.salary + self.commission_total
-        else:
-            payment = self.salary + (self.contract_total * self.commission_total)
+    #def get_monthly(self):
+    #    payment = 0
+    #    if self.commission == False:
+    #        payment = self.salary
+    #    elif self.commission and self.commission_type == "bonus":
+    #        payment = self.salary + self.commission_total
+    #    else:
+    #        payment = self.salary + (self.contract_total * self.commission_total)
 
-        return payment
+    #    return payment
 
-    def get_hourly(self):
-        payment = 0
-        if self.commission == False:
-            payment = self.salary * self.hours_worked
-        elif self.commission and self.commission_type == "bonus":
-            payment = (self.salary * self.hours_worked) + self.commission_total
-        else:
-            payment = (self.salary * self.hours_worked) + (self.contract_total * self.commission_total)
+    #def get_hourly(self):
+    #    payment = 0
+    #    if self.commission == False:
+    #        payment = self.salary * self.hours_worked
+    #    elif self.commission and self.commission_type == "bonus":
+    #        payment = (self.salary * self.hours_worked) + self.commission_total
+    #    else:
+    #        payment = (self.salary * self.hours_worked) + (self.contract_total * self.commission_total)
 
-        return payment
+    #    return payment
 
     def __str__(self):
         final_string = ""
