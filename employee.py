@@ -15,13 +15,13 @@ class Employee:
     def get_pay(self):
         payment = 0
         if self.contract == "monthly":
-            payment = get_monthly(self)
+            payment = get_monthly()
         else:
             payment = get_hourly(self)
 
         return payment
 
-    def get_monthly(self):
+    def get_monthly():
         payment = 0
         if self.commission == False:
             payment = self.salary
